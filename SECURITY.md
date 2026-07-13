@@ -1,21 +1,13 @@
 # Security Policy
 
-## Supported Versions
-
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
-
-| Version | Supported          |
-| ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
-
 ## Reporting a Vulnerability
+If you find a security vulnerability in our project, please report it so we can verify it.
 
-Use this section to tell people how to report a vulnerability.
+On GitHub you can use the "Report a Vulnerability" button under the "Security" tab to create a private report. If the vulnerability has low impact it's fine to report it as a public issue instead.
 
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+Alternatively, email the main contributors directly or contact them via Discord if you prefer.
+
+## Supported Versions
+vgmstream uses a rolling release model, so only the latest (HEAD) releases are supported.
+
+Tagged releases are published at semi-regular intervals based on the latest commits, and may be used as a reference.

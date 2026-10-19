@@ -23,22 +23,21 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Update nightly tag
+      # 'git pull -t' goes "would clobber existing tag" unless --force is added
+      - name: Update latest tag
         run: |
           git tag -f nightly "$GITHUB_SHA"
           git push origin refs/tags/nightly --force
 
-      - name: Create or update nightly release
+      - name: Update nightly release
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          if gh release view nightly >/dev/null 2>&1; then
-            gh release edit nightly \
-              --title "Nightly" \
-              --notes "Automated nightly build from commit $GITHUB_SHA"
-          else
-            gh release create nightly \
-              --title "Nightly" \
-              --notes "Automated nightly build from commit $GITHUB_SHA" \
-              --prerelease
-          fi
+           gh release edit nightly
+
+        #  # create or update
+        #  if gh release view nightly >/dev/null 2>&1; then
+        #    gh release edit nightly
+        #  else
+        #    gh release create nightly --title "Nightly" --prerelease
+        #  fi
